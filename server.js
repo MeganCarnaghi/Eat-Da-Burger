@@ -24,9 +24,9 @@ app.set("view engine", "handlebars");
 // Override with POST having ?_method=DELETE
 app.use(methodOverride('_method'));
 
-// Import the routes and give the server access to them
+// Import routes and give the server access to them
 var routes = require('./controllers/burgers_controller.js');
-app.use(routes);
+app.use('/', routes);
 
 // Start our server so it can listen for requests from the client
 app.listen(PORT, () => {

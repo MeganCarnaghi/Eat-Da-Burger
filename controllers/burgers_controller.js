@@ -1,42 +1,71 @@
-//REQUIRED DEPENDENCIES
+// REQUIRED DEPENDENCIES
 var express = require('express');
 var router = express.Router();
 
 // Import the model (burger.js) to use its database functions
 var burger = require('../models/burger.js');
 
-// Create routes
+// Create routes and set up the logic where needed within routes
 // GET route to get all burgers from the database
 router.get('/', (req, res) => {
-    burger.selectAll(function(data) {
-      var hbsObject = {
-        burgers: data
-      };
-      res.render('index', hbsObject);
-    });
+  burger.selectAll((data) => {
+    var hbsObject = {
+      burgers: data
+    };
+    // console.log(hbsObject);
+    res.render('index', hbsObject);
   });
+});
 
 // POST route to insert a burger into the database
 router.post('/burgers', (req, res) => {
-    burger.insertOne([
-      'burger_name'
-    ], [
-      req.body.burger_name
-    ], (data) => {
-      res.redirect('/');
-    });
+  burger.insertOne([
+    'burger_name'
+  ], [
+    req.body.burger_name
+  ], (data) => {
+    res.redirect('/');
   });
+});
 
-// PUT route to change a burger's devoured status to true
+// A PUT route to update a burger's devoured status
 router.put('/burgers/:id', (req, res) => {
-    var condition = 'id = ' + req.params.id;
+  var condition = 'id = ' + req.params.id;
+
+  burger.updateOne({
+    devoured: true
+  }, condition, (data) => {
+    res.redirect('/');
+  });
+});
+
+  // A DELETE route to delete a burger that has been devoured
+  router.delete("/burgers/:id", (req, res) => {
+    var condition = "id = " + req.params.id;
   
-    burger.updateOne({
-      devoured: true
-    }, condition, (data) => {
-      res.redirect('/');
+    burger.delete(condition, (result) => {
+      if (result.affectedRows == 0) {
+      // If no rows were changed, then the ID must not exist, return 404 (not found) status
+      return res.status(404).end();
+      } else {
+              // If a row was changed then the ID does exist, return 200 (OK) status
+        res.status(200).end();
+      }
     });
   });
 
-// Export routes for the server (server.js) to use
+// Export routes for server.js to use.
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+

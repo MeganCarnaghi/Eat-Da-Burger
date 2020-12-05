@@ -4,24 +4,26 @@ var connection = require('./connection.js');
 
 
 // Helper function for generating MySQL syntax (question marks)
+// This helper function loops through and creates an array of question marks - ["?", "?", "?"] - and turns it into a string.
+// ["?", "?", "?"].toString() => "?,?,?";
 const createQuestionMarks = (num) => {
 	var arr = [];
 
 	for (var i = 0; i < num; i++) {
 		arr.push("?");
 	}
-
+  // Translates the array of strings to a single comma-separated string
 	return arr.toString();
 }
 
-// Helper function for translating into SQL syntax
+//Helper function to translate the object key/value pairs to SQL syntax
 const objToSql = (ob) => {
 	var arr = [];
 
 	for (var key in ob) {
 		arr.push(key + "=" + ob[key]);
 	}
-
+  // Translates the array of strings to a single comma-separated string
 	return arr.toString();
 }
 
