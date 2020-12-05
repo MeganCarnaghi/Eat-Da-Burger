@@ -1,11 +1,12 @@
--- Create the burgers database and specify it for use
-CREATE DATABASE burgers_db;
-USE burgers_db;
+-- Insert a set of data into the burgers table
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("cheeseburger", FALSE);
 
--- Create the burgers table
-CREATE TABLE burgers (
-id INT NOT NULL AUTO_INCREMENT,
-burger_name VARCHAR(100) NOT NULL,
-devoured BOOLEAN DEFAULT false,
-PRIMARY KEY (id)
-);
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("turkey burger", FALSE);
+
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("hamburger", FALSE);
+
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("bison burger", FALSE);
