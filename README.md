@@ -24,14 +24,18 @@ Finally, navigate to http://localhost:3000/ in your browser.
 ## Technologies Used
 * HTML
 * CSS
+* JQuery
+* AJAX
 * Node
 * Express
 * Handlebars
 * ORM
 
 ## Links and Screenshot
-* Link to GitHub Repository: https://github.com/MeganCarnaghi/Burger.git
-* Link to Demo Video:
+* Link to GitHub Repository: https://github.com/MeganCarnaghi/Eat-Da-Burger.git
+* Link to Heroku Page:
+
+![screenshot](public/assets/screenshot/screenshot.jpg)
 
 © Megan Carnaghi, Michigan State University Full-Stack Web Development Bootcamp
 
