@@ -39,11 +39,19 @@ router.put('/burgers/:id', (req, res) => {
   });
 });
 
-  // A DELETE route to delete a burger that has been devoured
+  // // A DELETE route to delete a burger that has been devoured
+  // router.delete("/burgers/:id", (req, res) => {
+  //   var condition = "id = " + req.params.id;
+  
+  //   burger.delete(condition, (data) => {
+  //     res.redirect('/');
+  //   });
+  // });
+
   router.delete("/burgers/:id", (req, res) => {
     var condition = "id = " + req.params.id;
-  
-    burger.delete(condition, (data) => {
+
+    burger.deleteOne(condition, (data) => {
       res.redirect('/');
     });
   });
