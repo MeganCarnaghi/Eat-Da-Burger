@@ -43,14 +43,8 @@ router.put('/burgers/:id', (req, res) => {
   router.delete("/burgers/:id", (req, res) => {
     var condition = "id = " + req.params.id;
   
-    burger.delete(condition, (result) => {
-      if (result.affectedRows == 0) {
-      // If no rows were changed, then the ID must not exist, return 404 (not found) status
-      return res.status(404).end();
-      } else {
-              // If a row was changed then the ID does exist, return 200 (OK) status
-        res.status(200).end();
-      }
+    burger.delete(condition, (data) => {
+      res.redirect('/');
     });
   });
 
