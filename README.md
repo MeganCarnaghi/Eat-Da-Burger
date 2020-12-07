@@ -11,7 +11,7 @@ A burger logger created with MySQL, Node, Express, Handlebars and a homemade ORM
 
 ## Installation
 To run the application locally, use the following command to clone this repository:    
-`git clone https://github.com/MeganCarnaghi/Burger.git`  
+`git clone https://github.com/MeganCarnaghi/Eat-Da-Burger.git`  
 
 Once you're in the proper directory, run the following command in the Terminal to install the application depndencies:    
 `npm install`  

@@ -22,8 +22,8 @@
 <div class="col">
 <div class="card">
   <div class="card-header ready-side">
-   <h4>Ready to Devour</h4>
-   <p>Click on the button to devour your burger.</p>
+   <h4>Ready to Devour Burger</h4>
+   <p>Click the button to devour the burger.</p>
   </div>
   <ul class="list-group list-group-flush">
      {{#each burgers}}
@@ -46,15 +46,15 @@
     <div class="card">
   <div class="card-header devoured-side">
    <h4>Devoured Burgers</h4>
-   <p>Click on the trash can icon to delete the devoured burger.</p>
+   <p>Click the button to delete the devoured burger.</p>
   </div>
 
   <ul class="list-group list-group-flush">
             {{#each burgers}}
           {{#if this.devoured}}
     <li class="list-group-item">{{this.burger_name}}
-    <button type="button" class="trashburger btn btn-danger" id="trashbutton" data-id="{{this.id}}"
-    data-newDevoured="{{devour}}"><i class="fa fa-trash" aria-hidden="true"></i>
+    <button type="button" class="delete-burger btn btn-danger" data-id="{{this.id}}">
+    <i class="fa fa-trash" aria-hidden="true"></i>
 </button>
     </li>
           {{/if}}

@@ -93,10 +93,13 @@ var orm = {
 	deleteOne: (table, condition, cb) => {
 		var queryString = "DELETE FROM " + table + " WHERE " + condition;
 	
+		// Perform the database query
 		connection.query(queryString, (err, res) => {
 		  if (err) {
 			throw err;
 		  }
+		  
+		  // Return response in callback
 		  cb(res);
 		});
 	  }
