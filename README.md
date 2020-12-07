@@ -33,7 +33,7 @@ Finally, navigate to http://localhost:3000/ in your browser.
 
 ## Links and Screenshot
 * Link to GitHub Repository: https://github.com/MeganCarnaghi/Eat-Da-Burger.git
-* Link to Heroku Page:
+* Link to Heroku Page: https://still-hollows-01342.herokuapp.com/
 
 ![screenshot](public/assets/screenshot/screenshot.jpg)
 
