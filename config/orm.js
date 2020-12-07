@@ -79,7 +79,7 @@ var orm = {
 		queryString += condition;
 
 		// Perform the database query
-		connection.query(queryString, function(err, result) {
+		connection.query(queryString, (err, result) => {
 			if (err) {
 				throw err;
 			}
@@ -89,13 +89,13 @@ var orm = {
 		});
 	},
 	// Function that deletes a single row in the burgers table
-	delete: function(table, condition, cb) {
+	delete: (table, condition, cb) => {
 		// Construct the query string that deletes a single entry in the burgers table
 		var queryString = "DELETE FROM " + table;
 		queryString += " WHERE ";
 		queryString += condition;
 	
-		connection.query(queryString, function(err, result) {
+		connection.query(queryString, (err, result) => {
 		  if (err) {
 			throw err;
 		  }
