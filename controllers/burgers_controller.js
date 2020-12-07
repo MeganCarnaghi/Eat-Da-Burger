@@ -40,21 +40,19 @@ router.put('/burgers/:id', (req, res) => {
 });
 
   // // A DELETE route to delete a burger that has been devoured
-  // router.delete("/burgers/:id", (req, res) => {
-  //   var condition = "id = " + req.params.id;
-  
-  //   burger.delete(condition, (data) => {
-  //     res.redirect('/');
-  //   });
-  // });
-
-  router.delete("/burgers/:id", (req, res) => {
+  router.delete("/burgers/:id", function(req, res) {
     var condition = "id = " + req.params.id;
+    console.log("condition", condition);
 
-    burger.deleteOne(condition, (data) => {
-      res.redirect('/');
+    burger.deleteOne(condition, function(result) {
+      if (result.changedRows === 0) {
+        return res.status(404).end();
+      } else {
+        res.status(200).end();
+      }
     });
   });
+
 
 // Export routes for server.js to use.
 module.exports = router;

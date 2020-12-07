@@ -88,19 +88,33 @@ var orm = {
 			cb(result);
 		});
 	},
+
 	// Function that deletes a single row in the burgers table
-		deleteOne: (table, condition, cb) => {
-		// Construct the query string that deletes a single entry in the burgers table
-		var queryString = "DELETE FROM " + table;
-		queryString += " WHERE ";
-		queryString += condition;
+	// deleteOne: (table, condition, cb) => {
+	// 	// Construct the query string that deletes a single entry in the burgers table
+	// 	var queryString = "DELETE FROM " + table;
+	// 	queryString += " WHERE ";
+	// 	queryString += condition;
 	
-		connection.query(queryString, (err, result) => {
+	// 	connection.query(queryString, (err, result) => {
+	// 	  if (err) {
+	// 		throw err;
+	// 	  }
+	
+	// 	  cb(result);
+	// 	});
+	//   }
+	// };
+
+	deleteOne: function(table, condition, cb) {
+		var dbQuery = "DELETE FROM " + table + " WHERE " + condition;
+		console.log(dbQuery);
+	
+		connection.query(dbQuery, function(err, res) {
 		  if (err) {
 			throw err;
 		  }
-	
-		  cb(result);
+		  cb(res);
 		});
 	  }
 	};

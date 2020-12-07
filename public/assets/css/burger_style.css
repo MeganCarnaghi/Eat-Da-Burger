@@ -27,6 +27,7 @@ body {
 
   #burger_pic {
     float: right;
+    width: 250px;
     }
 
     .ready-side {
@@ -41,4 +42,8 @@ body {
 
     #ready {
         display: inline;
+    }
+
+    .btn-success, .btn-danger {
+        margin-left: 10px;
     }

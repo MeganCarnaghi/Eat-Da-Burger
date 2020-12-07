@@ -6,7 +6,7 @@ var orm = require('../config/orm.js');
 var burger = {
     // Select all burger records from the database
     selectAll: (cb) => {
-      orm.selectAll('burgers', function(res) {
+      orm.selectAll('burgers', (res) => {
         cb(res);
       });
     },
@@ -14,7 +14,7 @@ var burger = {
     // Insert a new burger into the database
     // (the variables cols and vals are arrays)
     insertOne: (cols, vals, cb) => {
-      orm.insertOne('burgers', cols, vals, function(res) {
+      orm.insertOne('burgers', cols, vals, (res) => {
         cb(res);
       });
     },
