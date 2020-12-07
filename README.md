@@ -19,7 +19,7 @@ Once you're in the proper directory, run the following command in the Terminal t
 Next, run the following command to start the application:    
 `node server.js`  
 
-Finally, navigate to http://localhost:3000/ in your browser.  
+Finally, navigate to http://localhost:3000/ in your browser.
 
 ## Technologies Used
 * HTML
