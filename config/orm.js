@@ -87,8 +87,23 @@ var orm = {
 			// Return response in callback
 			cb(result);
 		});
-	}
-};
+	},
+	// Function that deletes a single row in the burgers table
+	delete: function(table, condition, cb) {
+		// Construct the query string that deletes a single entry in the burgers table
+		var queryString = "DELETE FROM " + table;
+		queryString += " WHERE ";
+		queryString += condition;
+	
+		connection.query(queryString, function(err, result) {
+		  if (err) {
+			throw err;
+		  }
+	
+		  cb(result);
+		});
+	  }
+	};
 
 // Export the orm object
 module.exports = orm;
