@@ -37,6 +37,3 @@ Finally, navigate to http://localhost:3000/ in your browser.
 
 ![screenshot](public/assets/screenshot/screenshot.jpg)
 
-© Megan Carnaghi, Michigan State University Full-Stack Web Development Bootcamp
-
-
