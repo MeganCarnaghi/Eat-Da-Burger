@@ -5,6 +5,7 @@
 * [Installation](#installation)
 * [Technologies Used](#technologies-used)
 * [Links and Screenshot](#links-and-screenshot)
+* [License](#license)
 
 ## Description
 A burger logger created with MySQL, Node, Express, Handlebars and a homemade ORM.
@@ -36,4 +37,8 @@ Finally, navigate to http://localhost:3000/ in your browser.
 * Link to Heroku Page: https://still-hollows-01342.herokuapp.com/
 
 ![screenshot](public/assets/screenshot/screenshot.jpg)
+
+## License
+
+![license](https://img.shields.io/badge/License-MIT-success)
 
