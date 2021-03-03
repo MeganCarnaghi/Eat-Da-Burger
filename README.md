@@ -25,6 +25,7 @@ Finally, navigate to http://localhost:3000/ in your browser.
 ## Technologies Used
 * HTML
 * CSS
+* Bootstrap
 * JQuery
 * AJAX
 * Node
